@@ -1,5 +1,5 @@
 import trips from "@/app/data/trip";
-
+import Link from "next/link";
 export default function TripDetailPage({ params }) {
   const { tripId } = params;
   const trip = trips.find((trip) => trip.id === tripId);
@@ -14,6 +14,9 @@ export default function TripDetailPage({ params }) {
 
   return (
     <main className="p-6 space-y-4">
+      <Link href="/dashboard" className="  text-blue-600 hover:underline ">
+        ← กลับ
+      </Link>
       <h1 className="text-3xl font-bold">{trip.name}</h1>
       <p className="text-gray-600">{trip.date}</p>
       <p>{trip.description}</p>
